@@ -10,8 +10,6 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
 $name = $_GET['name'];
 $email = $_GET['email'];
 $age = (int)$_GET[('age')];
-var_dump($name, $email, $age);
-
 if (
     strpos($email, '@') !== false
     && strpos($email, '.') !== false
@@ -22,9 +20,4 @@ if (
 } else {
     echo "Accesso negato";
 }
-
-var_dump(strlen($name));
-var_dump(strpos($email, '@'));
-var_dump(strpos($email, '.'));
-var_dump(is_int($age));
 ?>
