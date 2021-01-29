@@ -4,16 +4,24 @@ Stampiamo a schermo tutte le partite con questo schema:
 Olimpia Milano - Cantù | 55 - 60 -->
 
 <?php
-var_dump($matches);
-$matches = [
-    'Casa' => [
-        'Squadra' => 'Olimpia MIlano',
-        'Punteggio' => 55
-    ],
-    'Ospiti' => [
-        'Squadra' => 'Cantu',
-        'Punteggio' => 60
-    ]
-];
-echo  $matches['Casa']['Squadra'] . " - " . $matches['Ospiti']['Squadra'] . " / " .  $matches['Casa']['Punteggio'] . " - " . $matches['Ospiti']['Punteggio'];
+$matches = array(
+    ["Casa" => 'Olimpia Milano', "Ospiti" => 'Cantu'],
+    ["Casa" => 'Codroipo', "Ospiti" => 'Real Madrid'],
+    ["Casa" => 'Marsiglia', "Ospiti" => 'Barcellona'],
+    ["Casa" => 'San Marino', "Ospiti" => 'Cleveland'],
+    ["Casa" => 'Raptors', "Ospiti" => 'Lakers'],
+    ["Casa" => 'Chicago Bulls', "Ospiti" => 'Sappada'],
+);
+
+// $pointsRandomHome = mt_rand(0, 150);
+// $pointsRandomGuest = mt_rand(0, 150); // generati in questo modo ogni risultato è uguale .
+
+$length = count($matches); // con la funzione count, riesco ad individuare il numero di elementi dinamicamente.
+
+for ($i = 0; $i < $length; ++$i) {
+    $partita = $matches[$i];
+    echo  "<li>" . $partita["Casa"] . " - " . $partita["Ospiti"] . " / " . $pointsRandomHome = mt_rand(0, 100) . " - " . $pointsRandomGuest = mt_rand(0, 100) . "</li>";
+}
 ?>
+
+<!-- Non ho trovato un modo piu' rapido per poter andare a capo ad ogni ciclo,se non inserendo un li -->
